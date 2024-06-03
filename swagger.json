@@ -1,0 +1,73 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "description": "API for Ecomm App",
+      "title": "Ecom API"
+    },
+    "host": "localhost:3200",
+    "paths": {
+      "/api/users/signin": {
+        "post": {
+            "tags":["Users"],
+
+          "summary": "Login",
+          "description": "User Login to get token",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "User Credentials",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "ok"
+            },
+            "400": {
+              "description": "Incorrect Credentials"
+            }
+          }
+        }
+      },
+      "/api/products": {
+        "get": {
+            "tags":["Products"],
+          "summary": "Get Products",
+          "description": "User will get all products",
+          "security": [
+            {
+              "JWT": {}
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          }
+        }
+      }
+    },
+    "securityDefinitions": {
+      "JWT": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+  
