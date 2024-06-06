@@ -1,0 +1,3 @@
+{"level":"info","message":"/api/users/signup - {\"name\":\"john Doe\",\"email\":\"john@gmail.com\",\"password\":\"john123\",\"type\":\"Seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signin - {\"email\":\"john@gmail.com\",\"password\":\"john123\"}","service":"request-logging"}
+{"level":"info","message":"/api/products - {}","service":"request-logging"}
